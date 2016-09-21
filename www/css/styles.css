@@ -1,0 +1,371 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600);
+
+/* Reset
+-------------------------------------------------------------- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+html,
+body,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout
+-------------------------------------------------------------- */
+
+body {
+    margin: 0 auto; /* Center the page */
+    max-width: 1100px; /* Manageable max content width for desktop screen */
+    padding: 1em; /* Pad around the entire page by one space */
+    /*display: flex;*/
+}
+
+header {
+    width: 200px;
+    position:fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    margin-left: 250px; /* Prevent right column from hiding left on resize */
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width:auto;
+        position:relative;
+    }
+
+    main {
+        margin: 0; /* No left column to worry about anymore. */
+    }
+}
+
+/*
+-------------------------------------------------------------- */
+
+body {
+    font-family: 'Raleway', Arial;
+}
+
+header {
+    margin-bottom: 3em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.1em;
+    letter-spacing: .4em;
+    font-weight: 600;
+    padding: 12px 12px;
+    color: #fff;
+    background-color: #333;
+}
+
+h3 {
+    margin-top: 2em;
+    margin-bottom: .4em;
+    font-weight: 600;
+    font-size: .9em;
+    /* Use flexbox to justify title parts far left and far right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+h3 strong {
+    font-size: 1.3em
+}
+
+h4 {
+    margin-bottom: .5em;
+    font-weight: 600;
+    font-size: .8em;
+}
+
+ol,
+ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.5;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+ul.address {
+    text-align: center;
+}
+ul.address li {
+    margin-bottom: 0;
+}
+ul.address li.print {
+    display:none;
+}
+
+ul.experience {
+    margin: 1em 0 1em 0;
+}
+
+/* Fancy link buttons */
+a.contact {
+    font-weight: 300;
+    letter-spacing: .1em;
+    text-align: center;
+    /* links can be made into decorative buttons */
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    margin-top: 24px; /* Space between buttons when in column */
+    /*padding: 20px 0;*/
+    padding: 14px 14px;
+    box-shadow: inset 0 0 0 4px white, 0 0 0 1px gray;
+    transition: all .5s ease;
+}
+a.contact:hover {
+    background: white;
+    color: black;
+    box-shadow: inset 0 0 0 4px silver, 0 0 0 1px silver;
+}
+
+img.me {
+    margin-bottom: 5px;
+}
+
+em.summary {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 1em 0 2em 0;
+}
+
+#education ol strong {
+    display: flex;
+    justify-content: space-between;
+}
+
+#experience ul {
+    margin-left: 1em;
+}
+
+.button-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.rating-column {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.rating {
+    display: flex;
+    justify-content: space-between;
+}
+.skill {
+    margin-top: 8px;
+}
+.stars {
+    margin-left: 10px;
+}
+.star {
+    /*font-size: 20px;*/
+    font-size: 1.6em;
+    position: relative;
+}
+.star.full:before {
+    color: #000;
+    content: '\2605'; /* Full star in UTF8 */
+    position: absolute;
+}
+
+/* Only for print and big screen */
+@media only print {
+    body {
+        width: 660px;
+        font-size: .8em;
+        margin: 0 auto; /* Center the page */
+    }
+
+    header {
+        width:auto;
+        position:relative;
+        margin-bottom: 1em;
+    }
+
+    main {
+        margin: 0; /* No left column to worry about anymore. */
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: #000;
+        background-color: #fff;
+        border-bottom: 1px solid #000;
+    }
+
+    li {
+        margin-bottom: .5em;
+    }
+
+    em.summary {
+        margin-bottom: 1em;
+    }
+
+    img.me {
+        display: none;
+    }
+
+    div.button-group {
+        display: none;
+    }
+    div.contact {
+        display: block;
+    }
+
+    a.contact {
+        width: auto;
+    }
+    a.contact:nth-of-type(1) {
+        margin-right: 0;
+    }
+    a.contact:nth-of-type(2) {
+        margin-left: 0;
+    }
+
+    ul.address {
+        text-align:left;
+    }
+    ul.address li {
+        display: inline;
+    }
+    ul.address li.print {
+        display: inline;
+    }
+    ul.address li.print:before {
+        content: '\ffed';
+        margin-right: 0.5em;
+    }
+}
+
+/* Only for small screen */
+@media only screen and (max-width: 768px) {
+    /* center all text except in lists */
+    body {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        background-color: transparent;
+        color: #939393;
+        font-weight: 300;
+        font-size: 2em;
+        letter-spacing: 0;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        display: block;
+    }
+    h3 strong {
+        display: block;
+        margin-top: .5em;
+    }
+
+    /* All text is centered except lists */
+    ul,
+    ol {
+        text-align: left;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+
+    a.contact {
+        width: 48%;
+    }
+    a.contact:nth-of-type(1) {
+        margin-right: 1%;
+    }
+    a.contact:nth-of-type(2) {
+        margin-left: 1%;
+    }
+
+    #experience {
+        margin-top: 2em;
+    }
+    #experience ul {
+        margin-left: 0;
+    }
+}
+
+/* Skills now require a single column */
+@media only screen and (max-width: 500px) {
+    .rating-container {
+        flex-direction: column;
+    }
+}
+
+/* Only for tiny screens */
+@media only screen and (max-width: 400px) {
+    /* Override small screen changes to buttons */
+    .button-group {
+        flex-direction: column;
+    }
+
+    a.contact {
+        width: auto;
+    }
+    a.contact:nth-of-type(1) {
+        margin-right: 0;
+    }
+    a.contact:nth-of-type(2) {
+        margin-left: 0;
+    }
+}
