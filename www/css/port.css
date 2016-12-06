@@ -1,0 +1,55 @@
+
+/*section.masthead {
+    background-color: black;
+    background-image: url('img/masthead-1600.jpg');
+}
+*/
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+@media only screen and (min-width: 601px) {
+    section.masthead {
+        /*background-image: url('/img/masthead-1600.jpg'); */
+        /*background: url(/img/masthead-1600.jpg) no-repeat center center fixed;*/
+        background: url(/img/masthead-1600.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    /* center image as window grows smaller */
+    /*
+    section.masthead {
+        background-image: url(/img/masthead-600.jpg);
+    }
+    */
+}
+@media only screen and (max-width: 600px) {
+    /* center image as window grows smaller */
+    section.masthead {
+        background-image: url(/img/masthead-600.jpg);
+    }
+}
+
+section.masthead {
+    /*
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    /*
+    min-width: 100%;
+    min-height: 100%;
+
+    position: relative;
+    background-position: 50% 25%;
+
+    background-size: cover;
+    */
+}
